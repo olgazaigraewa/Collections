@@ -1,6 +1,8 @@
+import lombok.Getter;
+
 import java.util.HashSet;
 import java.util.Set;
-
+@Getter
 public class ProductService {
     private final Set<Product> products = new HashSet<>();
 
@@ -12,18 +14,19 @@ public class ProductService {
         product.buy();
         return true;
     }
-    public Set<Product>getProducts(){
-        return products;
-    }
-    public void delete(Product d){
+
+
+    public void delete(Product d) {
         products.remove(d);
     }
 
     @Override
     public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Список продуктов - ").append("\n");
         for (Product product : this.products) {
-            System.out.println(product);
+            stringBuilder.append(product).append("\n");
         }
-            return null;
-        }
+        return stringBuilder.toString();
     }
+}

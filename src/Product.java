@@ -8,15 +8,15 @@ import java.util.Objects;
 public class Product {
     private  String name;
     private  int cost;
-    private int weight;
+
     private boolean isBuy;
 
-    public Product(String name, int cost, int weight) {
+    public Product(String name, int cost) {
         if (name == null || name.isEmpty() || name.isBlank() || cost <= 0)
             throw new IllegalArgumentException("Заполните карточку товара полностью!");
         this.name = name;
         this.cost = cost;
-        this.weight = weight;
+
     }
 
     public void buy() {
@@ -40,7 +40,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return name + ": цена - " + cost + ", вес " + weight + " кг.";
+        return name + ": цена - " + cost +  " рублей.";
     }
 
 
